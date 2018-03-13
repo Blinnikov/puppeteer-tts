@@ -1,0 +1,22 @@
+{
+  "name": "puppeteer-tts",
+  "version": "1.0.0",
+  "description": "\"# Puppeteer TTS\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blinnikov/puppeteer-tts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Blinnikov/puppeteer-tts/issues"
+  },
+  "homepage": "https://github.com/Blinnikov/puppeteer-tts#readme",
+  "dependencies": {
+    "puppeteer": "^1.1.1"
+  }
+}
