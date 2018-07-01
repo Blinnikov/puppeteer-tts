@@ -1,9 +1,9 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
+const path = require('path');
 
 const config = require('./config.json');
-
-const word = ['el cielo', 'el habitacion'];
+const words = require('./words');
 
 try {
   (async () => {
@@ -12,7 +12,7 @@ try {
         // devtools: true,
     });
 
-    await processWords(browser, word);
+    await processWords(browser, words);
 
     await browser.close()
   })()
@@ -30,7 +30,9 @@ async function processWords(page, words) {
 
 async function processWord(page, word) {
     const buffer = await downloadTts(page, word);
-    fs.writeFileSync(`./${word}.mp3`, buffer);
+    console.log(`Downloaded: ${word}`);
+    const filePath = path.join(config.folderToSave, `${word}.mp3`);
+    fs.writeFileSync(filePath, buffer);
 }
 
 async function downloadTts(browser, word) {
